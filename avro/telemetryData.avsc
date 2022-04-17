@@ -1,0 +1,75 @@
+{
+  "name": "TelemetryDataBatch",
+  "type": "record",
+  "namespace": "com.helsing.v1",
+  "fields": [
+    {
+      "name": "size",
+      "type": "int"
+    },
+    {
+      "name": "telemetryDataBatch",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "TelemetryData",
+          "type": "record",
+          "fields": [
+            {
+              "name": "timestamp",
+              "type": "int"
+            },
+            {
+              "name": "sensorId",
+              "type": "int"
+            },
+            {
+              "name": "id",
+              "type": "int"
+            },
+            {
+              "name": "version",
+              "type": "int"
+            },
+            {
+              "name": "objects",
+              "type": {
+                "type": "array",
+                "items": {
+                  "name": "ClassificationResult",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "type": "string"
+                    },
+                    {
+                      "name": "score",
+                      "type": "int"
+                    },
+                    {
+                      "name": "ymin",
+                      "type": "int"
+                    },
+                    {
+                      "name": "ymax",
+                      "type": "int"
+                    },
+                    {
+                      "name": "xmin",
+                      "type": "int"
+                    },
+                    {
+                      "name": "xmax",
+                      "type": "int"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
